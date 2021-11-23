@@ -19,14 +19,8 @@ class _CustomTextFormFieldWidgetState extends State<CustomTextFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      key: Key('input-user'),
-      style: const TextStyle(color: Colors.white),
-      validator: (text) {
-        return text!.isEmpty ? "Favor digitar a senha" :  null;
-      },
       decoration: InputDecoration(
-        hintText: 'User',
-        hintStyle: const TextStyle(color: Colors.white),
+        hintText: widget.hintText,
       ),
       obscureText: widget.obscureText,
     );

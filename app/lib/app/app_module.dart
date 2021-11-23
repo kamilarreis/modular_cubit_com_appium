@@ -10,7 +10,7 @@ class AppModule extends Module{
   @override
   List<Bind> get binds => [
     // Bind((i) => MenuController(configController: i.get(),authController: i.get())),
-     Bind((i) => SplashController()),
+    // Bind((i) => SplashController()),
     Bind((i) => OnePage()),
     Bind((i) => ConfigController()),
     // Bind((i) => FreeConsultationController(i.get())),
@@ -18,7 +18,7 @@ class AppModule extends Module{
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute(Modular.initialRoute, child: (_, args) => SplashPage()),
+    ChildRoute(Modular.initialRoute, child: (_, args) => OnePage()),
     ChildRoute(Modular.initialRoute + "login", child: (_, args) => LoginPage()),
     // ChildRoute(Modular.initialRoute + "alert", child: (_, args) => AlertPage(route: args.data,)),
   ];

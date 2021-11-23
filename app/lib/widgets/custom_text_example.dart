@@ -21,7 +21,7 @@ class _CustomTextExampleState extends State<CustomTextExample> {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Row(
-          children: [
+          children: const [
             Icon(Icons.sanitizer),
             Spacer(),
             Text('Custom Widget'),

@@ -22,11 +22,11 @@ class _OnePageState extends State<OnePage> {
               size: 100,
               color: Colors.purple[800],
             ),
-            CustomTextFormFieldWidget(
+            const CustomTextFormFieldWidget(
               key: Key('input-user'),
               hintText: 'User',
             ),
-            CustomTextFormFieldWidget(
+            const CustomTextFormFieldWidget(
               key: Key('input-password'),
               hintText: 'Password',
               obscureText: true,
