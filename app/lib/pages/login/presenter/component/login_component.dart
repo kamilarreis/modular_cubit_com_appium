@@ -146,7 +146,7 @@ Widget getLogin(BuildContext context) {
               ),
             ),
             Container(
-              padding: const EdgeInsets.only(top:80),
+              padding: const EdgeInsets.only(top:80, left: 60, right: 60),
                 width: double.infinity,
                 child: TextButton(
                     style: ButtonStyle(overlayColor: MaterialStateProperty.all(Colors.transparent),),
@@ -183,11 +183,11 @@ Widget getLogin(BuildContext context) {
                 clipper: WaveClipperTwo(flip: true,reverse: true),
                 child: Container(
                     height: MediaQuery.of(context).size.height/4,
-                 decoration: const BoxDecoration (
-                   gradient: LinearGradient(
+                 decoration:  BoxDecoration (
+                   gradient:  LinearGradient(
                        begin: Alignment.topLeft,
                        end: Alignment.bottomRight,
-                       colors: [ Colors.tealAccent, Colors.purpleAccent]
+                       colors: [Colors.tealAccent.withOpacity(0.6), Colors.purpleAccent.withOpacity(0.6)]
                    ),
                    borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
 
