@@ -37,6 +37,8 @@ const opts = {
   await driver.execute('flutter:clearTimeline');
   await driver.execute('flutter:forceGC');
 
+  await new Promise(r => setTimeout(r, 2800));
+
   //Enter One page
   const btnLogin = find.byValueKey('btn-login');
   const inputUser = find.byValueKey('input-user');
@@ -44,7 +46,7 @@ const opts = {
   await new Promise(r => setTimeout(r, 600));
 
   await driver.execute('flutter:waitFor', btnLogin);
-  await driver.elementSendKeys(inputUser, 'test@gmail.com')
+  await driver.elementSendKeys(inputUser, 'testkamireis@gmail.com')
   await driver.elementSendKeys(inputPassword, '123456')
   await driver.elementClick(btnLogin);
 

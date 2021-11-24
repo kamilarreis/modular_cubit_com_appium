@@ -104,6 +104,40 @@ mixin _$ConfigController on _ConfigControllerBase, Store {
     });
   }
 
+  final _$primaryLoginButtonColorAtom =
+      Atom(name: '_ConfigControllerBase.primaryLoginButtonColor');
+
+  @override
+  Color get primaryLoginButtonColor {
+    _$primaryLoginButtonColorAtom.reportRead();
+    return super.primaryLoginButtonColor;
+  }
+
+  @override
+  set primaryLoginButtonColor(Color value) {
+    _$primaryLoginButtonColorAtom
+        .reportWrite(value, super.primaryLoginButtonColor, () {
+      super.primaryLoginButtonColor = value;
+    });
+  }
+
+  final _$secundaryLoginButtonColorAtom =
+      Atom(name: '_ConfigControllerBase.secundaryLoginButtonColor');
+
+  @override
+  Color get secundaryLoginButtonColor {
+    _$secundaryLoginButtonColorAtom.reportRead();
+    return super.secundaryLoginButtonColor;
+  }
+
+  @override
+  set secundaryLoginButtonColor(Color value) {
+    _$secundaryLoginButtonColorAtom
+        .reportWrite(value, super.secundaryLoginButtonColor, () {
+      super.secundaryLoginButtonColor = value;
+    });
+  }
+
   final _$_ConfigControllerBaseActionController =
       ActionController(name: '_ConfigControllerBase');
 
@@ -126,7 +160,9 @@ primaryColor: ${primaryColor},
 accentColor: ${accentColor},
 primaryColorDark: ${primaryColorDark},
 primaryGradientButtonColor: ${primaryGradientButtonColor},
-secundaryGradientButtonColor: ${secundaryGradientButtonColor}
+secundaryGradientButtonColor: ${secundaryGradientButtonColor},
+primaryLoginButtonColor: ${primaryLoginButtonColor},
+secundaryLoginButtonColor: ${secundaryLoginButtonColor}
     ''';
   }
 }

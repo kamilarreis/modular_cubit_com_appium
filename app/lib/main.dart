@@ -6,7 +6,9 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:flutter_driver/driver_extension.dart';
 
 void main() async {
-  enableFlutterDriverExtension();
+  //TODO: para abrir o teclado essa linha deve ser comentada
+  //Sugestao usar o build variantes para gerar debug e release
+ // enableFlutterDriverExtension();
   WidgetsFlutterBinding.ensureInitialized();
   initializeDateFormatting("pt").then((_) => runApp(ModularApp(module: AppModule(),child: AppWidget(),)));
 }
