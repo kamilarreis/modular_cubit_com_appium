@@ -29,9 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_mobx: ^2.0.0
-  mobx: ^2.0.1
-  flutter_modular: ^3.2.2+1
+  flutter_mobx: ^2.0.2
+  mobx: ^2.0.5
+  flutter_modular: ^3.0.0-nullsafety.3
   dartz: ^0.10.0
   intl: ^0.17.0
   flutter_driver_extension_extensions: ^0.0.4
