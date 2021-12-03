@@ -20,8 +20,8 @@ class AppModule extends Module{
     Bind((i) => LoginController(i.get())),
     Bind((i) => ApiDatasourceImpl()),
     Bind((i) => LoginRepositoryImpl(i.get())),
-    Bind((i)=> LoginUseCaseImpl(i.get())),
-    Bind((i) => LoginCubit(i.get())),
+    Bind((i) => LoginUseCaseImpl(i.get())),
+    Bind((i) => LoginCubit(i.get(), i.get())),
     Bind((i) => ProfileController()),
   ];
 

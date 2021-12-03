@@ -1,5 +1,4 @@
 //extender entite
-import 'package:app/pages/login/domain/entities/login_entitie.dart';
 import 'package:app/pages/profile/domain/entities/profile_entitie.dart';
 
 class ProfileModel extends Profile{

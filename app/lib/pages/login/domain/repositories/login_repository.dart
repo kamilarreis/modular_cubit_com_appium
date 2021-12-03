@@ -4,5 +4,5 @@ import 'package:app/pages/util/errors/erros_util.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class ILoginRepository {
-  Future<Either<Failure, Profile>> getFullConsultationByCar(Login login);
+  Future<Either<Failure, Profile>> getLogin(Login login);
 }

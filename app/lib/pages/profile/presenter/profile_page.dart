@@ -1,3 +1,4 @@
+import 'package:app/pages/profile/presenter/component/profile_component.dart';
 import 'package:app/pages/profile/presenter/profile_controller.dart';
 import 'package:app/pages/util/config_controller.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ class ProfilePage extends StatefulWidget {
   _ProfilePageState createState() => _ProfilePageState();
 }
 
-final Shader linearGradientDark = LinearGradient(
+final Shader linearGradientDark = const LinearGradient(
     colors: <Color>[Colors.tealAccent, Colors.purpleAccent],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight
@@ -60,6 +61,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+
                       Padding(
                           padding: EdgeInsets.only(top:30),
                           child: Center(
@@ -77,39 +79,9 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                           )
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top:40),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                         mainAxisAlignment: MainAxisAlignment.center,
-                         children: [
-                           Text("Nome: ",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20, color: Colors.white)),
-                           Text(profileController.getProfile()!.name, style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20, color: Colors.white)),
-                         ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top:20),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Profissão: ",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20, color: Colors.white)),
-                            Text(profileController.getProfile()!.profissao, style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20, color: Colors.white)),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top:20),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Email: ",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20, color: Colors.white)),
-                            Text(profileController.getProfile()!.email, style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20, color: Colors.white)),
-                          ],
-                        ),
-                      )
+                      linesText("Nome: ",profileController.getProfile()!.name),
+                      linesText("Profissão: ",profileController.getProfile()!.profissao),
+                      linesText("Email: ",profileController.getProfile()!.email),
                     ],
                   ),
                 ),

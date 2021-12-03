@@ -2,6 +2,7 @@ import 'package:app/pages/login/domain/entities/login_entitie.dart';
 import 'package:app/pages/login/domain/usecases/login_use_case.dart';
 import 'package:app/pages/login/presenter/cubit/login_state.dart';
 import 'package:app/pages/profile/domain/entities/profile_entitie.dart';
+import 'package:dartz/dartz.dart';
 import 'package:mobx/mobx.dart';
 
 part 'login_controller.g.dart';
@@ -17,29 +18,14 @@ abstract class _LoginController with Store {
   @observable
   Profile? profile;
 
-  @observable
-  LoginState state = LoggedOutState();
-
-  @action
-  setState(LoginState value) => state = value;
-
-  @action
-  Future stateReaction (Login login) async{
-    makeSearch(login);
-
-    setState(LoadingState());
-  }
-
-  @action
-  Future<LoginState> makeSearch(Login login) async {
-    var result = await loginUseCase(login);
-    profile = result;
-    return setState(LoggedState(result));
-  }
-
-  Future<Profile?> getProfile() async {
-    if(profile != null){
-      return profile;
-    }
+  Future<Profile> getProfile(Login login, final profile) async {
+    Profile profileModel;
+    var model;
+    profile.fold((error) => left(error), (success) {
+      model = success;
+      return model;
+    });
+    profileModel = model;
+    return profileModel;
   }
 }

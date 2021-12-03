@@ -11,7 +11,7 @@ class LoginRepositoryImpl implements ILoginRepository {
   LoginRepositoryImpl(this.datasource);
 
   @override
-  Future<Either<Failure, Profile>> getFullConsultationByCar(Login login) async {
+  Future<Either<Failure, Profile>> getLogin(Login login) async {
     final Profile profile;
     try{
       profile = await datasource.getUserLogin(login);
